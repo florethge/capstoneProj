@@ -1,2 +1,1 @@
-# capstoneProj
-Capstone Project for QA Wizeline Bootcamp
+## Capstone Project for QA Wizeline Bootcamp

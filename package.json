@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "testcafe": "^1.17.1"
+  },
+  "scripts": {
+    "test-all-chrome": "testcafe chrome pom/tests",
+    "test-headless-chrome": "testcafe chrome:headless pom/tests",
+    "test-headless-chrome": "testcafe chrome:headless, safari:headless pom/tests"
+
+
+  }
+}
