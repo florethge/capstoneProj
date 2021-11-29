@@ -30,7 +30,7 @@ npm install
 
 ### Scripts
 | Script Name|Description|
-|----------|:-------------:|
+|----------|:-------------|
 | test-login-chrome |Runs all tests from *Login feature tests* fixture on a Chrome instance.|
 | test-addTasks-chrome |Runs all tests from *Add new task* fixture on a Chrome instance.|
 |test-addProject-chrome|Runs all tests from *Add new project* fixture on a Chrome instance.|
