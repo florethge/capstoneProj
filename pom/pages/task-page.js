@@ -24,25 +24,22 @@ class addTasks{
         .wait(5000)
     }
 
-    async addTaskFlow(title, description){
-        if (await t.expect(this.addTaskButton.exists.ok)){
+    async addMultipleTaskFlow(title, description){
+        if (await this.addTaskButton.exists){
             await t.click(this.addTaskButton)
         }
         await t
-        .click(this.addTaskButton)
         .typeText(this.taskTitle, title)
         .typeText(this.taskDescription, description)
         .click(this.programTaskButton)
-
         .click(this.todayButton)
         .click(this.submitTaskButton)
-        .wait(5000)
     }
 
     generateRandomString(numberStrings) {
         let randomStrings = Array(numberStrings)
         for (let index = 0; index < numberStrings; index++) {
-            randomStrings[index] = randomstring.generate();
+            randomStrings[index] = randomstring.generate(4);
         }
         return randomStrings
     }

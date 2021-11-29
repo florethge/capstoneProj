@@ -1,13 +1,24 @@
 {
   "dependencies": {
     "dotenv": "^10.0.0",
+    "eslint-plugin-testcafe": "^0.2.1",
     "randomstring": "^1.2.1",
-    "testcafe": "^1.17.1"
+    "testcafe": "^1.17.1",
+    "testcafe-reporter-html": "^1.4.6"
   },
   "scripts": {
-    "test-login-chrome": "testcafe chrome pom/tests/addTask.test.js",
-    "test-login-headless": "testcafe chrome:headless,firefox:headless pom/tests/login.tests.js --test-scheduling",
+    "test-login-chrome": "testcafe chrome pom/tests/login.test.js",
+    "test-addTasks-chrome": "testcafe chrome pom/tests/addTask.test.js",
+    "test-addProject-chrome": "testcafe chrome pom/tests/newProject.test.js",
+    "test-login-headless": "testcafe chrome:headless,firefox:headless pom/tests/login.test.js --test-scheduling",
     "test-all-chrome": "testcafe chrome pom/tests",
-    "test-all-headless-browsers": "testcafe chrome:headless,firefox:headless pom/tests --test-scheduling"
+    "test-allReport-chrome": "testcafe chrome pom/tests --reporter html:report.html",
+    "test-smoke-chrome": "testcafe chrome pom/tests --test-meta type=smoke"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

@@ -1,18 +1,20 @@
 import loginPage from '../pages/login-page'
 import navbarPage from '../pages/navbar-page'
 import { URLS, CREDENTIALS } from '../data/constants'
+import { STANDARD_USER } from '../data/roles'
 
 fixture `Login feature tests` 
     .page  `${URLS.LOGIN_URL}`;
 
-test.skip
+test
     ('Valid user credentials during login', async t => {
-        await loginPage.loginForm(CREDENTIALS.USER.EMAIL, CREDENTIALS.USER.PASSWORD)
+        await t.useRole(STANDARD_USER)
         await navbarPage.settingsMenu()
         await t.expect(navbarPage.loggedUserEmail.innerText).eql(CREDENTIALS.USER.EMAIL)
     });
 
 test
+    .meta('type' , 'smoke')
     ('Invalid email during login', async t => {
         await loginPage.loginForm("", CREDENTIALS.USER.PASSWORD)
         await t.expect(loginPage.errorMessage.exists).ok()
