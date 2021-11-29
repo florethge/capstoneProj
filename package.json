@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "dotenv": "^10.0.0",
+    "randomstring": "^1.2.1",
     "testcafe": "^1.17.1"
   },
   "scripts": {
+    "test-login-chrome": "testcafe chrome pom/tests/addTask.test.js",
+    "test-login-headless": "testcafe chrome:headless,firefox:headless pom/tests/login.tests.js --test-scheduling",
     "test-all-chrome": "testcafe chrome pom/tests",
-    "test-headless-chrome": "testcafe chrome:headless pom/tests",
-    "test-headless-chrome": "testcafe chrome:headless, safari:headless pom/tests"
-
-
+    "test-all-headless-browsers": "testcafe chrome:headless,firefox:headless pom/tests --test-scheduling"
   }
 }
