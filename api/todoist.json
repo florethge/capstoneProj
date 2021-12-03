@@ -14,6 +14,11 @@
       "name": "Projects",
       "item": [
         {
+          "name": "New Folder",
+          "item": [],
+          "id": "465f7e0c-de75-4ac3-bbba-980064518eba"
+        },
+        {
           "name": "getAllProjects",
           "event": [
             {
