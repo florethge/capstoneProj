@@ -55,7 +55,7 @@
           "name": "Negative Forbidden",
           "item": [
             {
-              "name": "getActiveTasks Copy",
+              "name": "getActiveTasks",
               "event": [
                 {
                   "listen": "test",
