@@ -8,12 +8,40 @@
     {
       "name": "Tasks",
       "item": [],
-      "_postman_id": "958d8ff8-696c-481d-8968-b75826d68712"
+      "id": "958d8ff8-696c-481d-8968-b75826d68712"
     },
     {
       "name": "Projects",
       "item": [],
-      "_postman_id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
+      "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "{{token}}"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "b6dbd16a-565b-4192-9465-b61305922b3a",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "aec06d06-68fb-4941-9805-8e5db29c78dc",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
     }
   ]
 }
