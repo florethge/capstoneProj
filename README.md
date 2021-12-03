@@ -23,6 +23,9 @@ npm install
 ### Project Structure
 ```
 |-- README.md
+|-- api
+|   |-- capstoneEnviroment.postman_environment.json
+|   `-- todoist.json
 |-- package-lock.json
 |-- package.json
 |-- pom
