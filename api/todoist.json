@@ -44,7 +44,7 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "createNewTask",
               "id": "b3d3febf-506a-483a-99bb-f40397070492",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
