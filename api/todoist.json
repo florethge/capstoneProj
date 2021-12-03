@@ -243,9 +243,6 @@
                   "script": {
                     "id": "e24b7748-bf65-4d04-aecf-e3e4048f2f9b",
                     "exec": [
-                      "pm.test(\"Status code is 401 Forbidden not authorized for update project\", () => {",
-                      "  pm.response.to.have.status(401);",
-                      "});",
                       ""
                     ],
                     "type": "text/javascript"
