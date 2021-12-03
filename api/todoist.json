@@ -10,7 +10,21 @@
       "item": [
         {
           "name": "Positive",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "0b5b9bbc-2bd1-4cf8-b8e3-08eef881a85e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
         },
         {
