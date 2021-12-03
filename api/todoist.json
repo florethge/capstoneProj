@@ -249,6 +249,19 @@
             "url": null
           },
           "response": []
+        },
+        {
+          "name": "getProject Negative Copy",
+          "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
