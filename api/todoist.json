@@ -440,6 +440,36 @@
                 "url": "https://api.todoist.com/rest/v1/tasks/3433434/close"
               },
               "response": []
+            },
+            {
+              "name": "closeTask Copy 2",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2c9181ab-6f31-434e-8033-c4f758b39f27",
+                    "exec": [
+                      "pm.test(\"Status code is 404 task not found\", () => {",
+                      "  pm.response.to.have.status(404);",
+                      "});",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "b005870f-3d57-41eb-83ce-7e03f06ef37e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/tasks/3433434/close"
+              },
+              "response": []
             }
           ],
           "id": "91976169-6610-47fa-9612-1da54bd89cfb"
