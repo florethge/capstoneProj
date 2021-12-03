@@ -155,7 +155,7 @@
               "response": []
             },
             {
-              "name": "updateProject Negative Copy",
+              "name": "updateProject",
               "id": "b3fc52be-2843-4c2c-8268-ee94d16d4c2f",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
