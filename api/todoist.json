@@ -332,12 +332,27 @@
             },
             {
               "name": "deleteTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "d9c1c1b4-e12c-4b32-970a-2e80ce7cb87a",
+                    "exec": [
+                      "pm.test(\"Status code is 204 delete a task\", () => {",
+                      "  pm.response.to.have.status(204);",
+                      "});",
+                      "pm.environment.unset(\"task_id\");"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "7c84d12e-fb30-4f4f-9c4a-fc52fa0c98fe",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "DELETE",
                 "header": [],
                 "url": {
                   "raw": "https://api.todoist.com/rest/v1/tasks/:id",
