@@ -106,7 +106,7 @@
           "response": []
         },
         {
-          "name": "createNewProject",
+          "name": "createNewProject Negative Copy",
           "event": [
             {
               "listen": "test",
