@@ -42,6 +42,38 @@
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
+            },
+            {
+              "name": "getActiveTasks Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "bf2eac39-6239-461a-a38f-297ceafac47f",
+                    "exec": [
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "6495a140-9a44-487b-aa59-0c0665516ef0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
             }
           ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
