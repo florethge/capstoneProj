@@ -288,9 +288,7 @@
                   "script": {
                     "id": "4650d353-ab21-4c96-ad2c-04fdbb2733bf",
                     "exec": [
-                      "pm.test(\"Status code is 401 Forbidden not authorized for delete project\", () => {",
-                      "  pm.response.to.have.status(401);",
-                      "});"
+                      ""
                     ],
                     "type": "text/javascript"
                   }
