@@ -1467,7 +1467,7 @@
           "name": "Negative",
           "item": [
             {
-              "name": "createNewProject Negative",
+              "name": "createNewProject",
               "event": [
                 {
                   "listen": "test",
@@ -1527,7 +1527,7 @@
               "response": []
             },
             {
-              "name": "getProject Negative",
+              "name": "getProject",
               "event": [
                 {
                   "listen": "test",
