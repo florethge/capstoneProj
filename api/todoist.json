@@ -24,12 +24,9 @@
                   "script": {
                     "id": "b736a220-fb63-49c5-92e0-59f46a440886",
                     "exec": [
-                      "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
-                      "  pm.response.to.have.status(400);",
-                      "});",
-                      "",
-                      "",
-                      ""
+                      "pm.test(\"Status code is 401 Forbidden not authorized\", () => {",
+                      "  pm.response.to.have.status(401);",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -40,10 +37,6 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "auth": {
-                  "type": "bearer",
-                  "bearer": {}
-                },
                 "method": "POST",
                 "header": [],
                 "body": {
@@ -52,8 +45,7 @@
                     {
                       "key": "name",
                       "value": "test project",
-                      "type": "text",
-                      "disabled": true
+                      "type": "text"
                     }
                   ]
                 },
@@ -90,13 +82,11 @@
                   "script": {
                     "id": "56bc856b-9454-4b7f-ae09-624f0fc9076a",
                     "exec": [
-                      "pm.test(\"Content-Type header is application/json\", () => {",
-                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "pm.test(\"Status code is 401 Forbidden not authorized\", () => {",
+                      "  pm.response.to.have.status(401);",
                       "});",
                       "",
-                      "pm.test(\"Status code is 200\", () => {",
-                      "  pm.response.to.have.status(200);",
-                      "});",
+                      "",
                       ""
                     ],
                     "type": "text/javascript"
@@ -116,6 +106,23 @@
             },
             {
               "name": "getProject",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "39eeef19-2ae8-4862-b580-ddee345a0e03",
+                    "exec": [
+                      "pm.test(\"Status code is 401 Forbidden not authorized\", () => {",
+                      "  pm.response.to.have.status(401);",
+                      "});",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -123,12 +130,58 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
               },
               "response": []
             }
           ],
-          "id": "465f7e0c-de75-4ac3-bbba-980064518eba"
+          "id": "465f7e0c-de75-4ac3-bbba-980064518eba",
+          "auth": {
+            "type": "bearer",
+            "bearer": {}
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "042e3589-2e08-4dc7-9e5e-e9a8c5c2a937",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "4838e7c6-304c-4f46-97ba-ce8c7a49ee44",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "getAllProjects",
