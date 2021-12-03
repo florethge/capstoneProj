@@ -786,9 +786,6 @@
                   "script": {
                     "id": "b23abcac-83f7-41b8-8768-8d4f32461a17",
                     "exec": [
-                      "pm.test(\"Status code is 204 update project\", () => {",
-                      "  pm.response.to.have.status(204);",
-                      "});",
                       ""
                     ],
                     "type": "text/javascript"
@@ -819,7 +816,6 @@
                   ],
                   "variable": [
                     {
-                      "id": "adea6f88-34dc-4185-a546-f954fac8906a",
                       "key": "id",
                       "value": "{{task_id}}"
                     }
