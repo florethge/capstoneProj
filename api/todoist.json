@@ -104,6 +104,34 @@
             "url": "https://api.todoist.com/rest/v1/projects"
           },
           "response": []
+        },
+        {
+          "name": "createNewProject Negative Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "200d0b18-c6b4-4ff7-b0c5-a6b98d866aca",
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
+                  "  pm.response.to.have.status(400);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "0a5afa7c-097b-40dc-a2ce-81db707bc255",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "https://api.todoist.com/rest/v1/projects"
+          },
+          "response": []
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
