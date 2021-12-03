@@ -342,28 +342,7 @@
                   "script": {
                     "id": "f590991e-60bd-4ba6-8822-a15f2ce47367",
                     "exec": [
-                      "pm.test(\"Status code is 200 sending name\", () => {",
-                      "  pm.response.to.have.status(200);",
-                      "});",
-                      "",
-                      "pm.test(\"Content-Type header is application/json\", () => {",
-                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
-                      "});",
-                      "",
-                      "const schema = {",
-                      "  \"type\": \"object\",",
-                      "  \"properties\": {",
-                      "    \"id\": {",
-                      "      \"type\": \"number\"",
-                      "    },",
-                      "    \"content\": {",
-                      "      \"type\": \"string\"",
-                      "    }",
-                      "  }",
-                      "};",
-                      "pm.test('Schema is valid for id and content', function() {",
-                      "  pm.response.to.have.jsonSchema(schema);",
-                      "});"
+                      ""
                     ],
                     "type": "text/javascript"
                   }
@@ -396,7 +375,6 @@
                   ],
                   "variable": [
                     {
-                      "id": "4834de4a-c42f-46e4-b988-b45359e430b0",
                       "key": "id",
                       "value": "{{task_id}}"
                     }
