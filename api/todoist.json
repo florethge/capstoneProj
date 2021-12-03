@@ -238,7 +238,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "getProject",
           "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
