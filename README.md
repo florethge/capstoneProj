@@ -49,6 +49,7 @@ npm install
 - Node
 - Testcafe
 - JavaScript
+- Newman
 
 ### Dependencies
 - dotenv
@@ -56,6 +57,17 @@ npm install
 - eslint
 - eslint plugin testcafe
 - testcafe reporter html
+- newman
+
+### Newman Setup
+1. Go to the api folder and onto the json file.
+```
+api/capstoneEnviroment.postman_environment.json
+```
+2. Modify the following line:
+```
+"value": "your_own_token",
+```
 
 ### Scripts
 | Script Name|Description|
@@ -68,4 +80,5 @@ npm install
 |test-allReport-chrome|Runs all tests on a Chrome instance generating an HTML Test Report.|   
 |test-smoke-chrome|Run all smoke tests on a Chrome instance.|  
 |eslint| Run Eslint|
+|api-newman-tests| Run Api tests using Newman and Postman|
 
