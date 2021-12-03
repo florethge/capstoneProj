@@ -53,33 +53,7 @@
         },
         {
           "name": "Negative Forbidden",
-          "item": [
-            {
-              "name": "getActiveTasks",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "bf2eac39-6239-461a-a38f-297ceafac47f",
-                    "exec": [
-                      ""
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "6495a140-9a44-487b-aa59-0c0665516ef0",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": "https://api.todoist.com/rest/v1/tasks"
-              },
-              "response": []
-            }
-          ],
+          "item": [],
           "id": "7fc71e65-7b92-40f2-865a-2adb2f1b0de5",
           "auth": {
             "type": "bearer",
