@@ -175,7 +175,7 @@
               "response": []
             },
             {
-              "name": "updateTask Copy",
+              "name": "updateTask",
               "event": [
                 {
                   "listen": "test",
