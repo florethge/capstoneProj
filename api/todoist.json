@@ -1604,7 +1604,7 @@
               "response": []
             },
             {
-              "name": "deleteProject Negative",
+              "name": "deleteProject",
               "event": [
                 {
                   "listen": "test",
