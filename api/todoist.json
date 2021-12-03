@@ -13,6 +13,25 @@
           "item": [
             {
               "name": "getActiveTasks",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "eee51665-802a-4be4-b055-43e082a7b3ac",
+                    "exec": [
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "0b5b9bbc-2bd1-4cf8-b8e3-08eef881a85e",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -20,7 +39,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
             }
