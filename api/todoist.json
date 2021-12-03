@@ -419,9 +419,11 @@
                   "script": {
                     "id": "e4a4b739-1355-4379-acd2-98af56526350",
                     "exec": [
-                      "pm.test(\"Status code is 204 update project\", () => {",
-                      "  pm.response.to.have.status(204);",
+                      "pm.test(\"Status code is 404 task not found\", () => {",
+                      "  pm.response.to.have.status(404);",
                       "});",
+                      "",
+                      "",
                       ""
                     ],
                     "type": "text/javascript"
@@ -435,29 +437,7 @@
               "request": {
                 "method": "POST",
                 "header": [],
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/tasks/:id/close",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "tasks",
-                    ":id",
-                    "close"
-                  ],
-                  "variable": [
-                    {
-                      "id": "869c403e-67b8-460a-976f-d4ea93514506",
-                      "key": "id",
-                      "value": "{{task_id}}"
-                    }
-                  ]
-                }
+                "url": "https://api.todoist.com/rest/v1/tasks/3433434/close"
               },
               "response": []
             }
