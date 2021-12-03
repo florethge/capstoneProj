@@ -53,7 +53,21 @@
         },
         {
           "name": "Negative Forbidden",
-          "item": [],
+          "item": [
+            {
+              "name": "New Request",
+              "id": "a1d6e36c-d4d9-4b2b-98b3-43bbbf257ab6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
           "id": "7fc71e65-7b92-40f2-865a-2adb2f1b0de5",
           "auth": {
             "type": "bearer",
