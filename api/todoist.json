@@ -620,7 +620,7 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "deleteProject",
               "id": "bd870c91-5c98-48de-9b59-533e79da4558",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
