@@ -680,8 +680,8 @@
                   "script": {
                     "id": "34398021-4256-439e-b8d5-fed5995c13f2",
                     "exec": [
-                      "pm.test(\"Status code is 400 name, color or favorite fields not set (Bad request)\", () => {",
-                      "  pm.response.to.have.status(400);",
+                      "pm.test(\"Status code is 405 no project id is given on delete project\", () => {",
+                      "  pm.response.to.have.status(405);",
                       "});"
                     ],
                     "type": "text/javascript"
@@ -693,9 +693,9 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "DELETE",
                 "header": [],
-                "url": null
+                "url": "https://api.todoist.com/rest/v1/projects/"
               },
               "response": []
             }
