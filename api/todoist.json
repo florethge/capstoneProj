@@ -657,11 +657,6 @@
                   "script": {
                     "id": "2c9181ab-6f31-434e-8033-c4f758b39f27",
                     "exec": [
-                      "pm.test(\"Status code is 404 task not found\", () => {",
-                      "  pm.response.to.have.status(404);",
-                      "});",
-                      "",
-                      "",
                       ""
                     ],
                     "type": "text/javascript"
@@ -675,7 +670,28 @@
               "request": {
                 "method": "POST",
                 "header": [],
-                "url": "https://api.todoist.com/rest/v1/tasks/3433434/close"
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id/close",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id",
+                    "close"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
               },
               "response": []
             }
