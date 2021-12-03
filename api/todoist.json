@@ -240,6 +240,7 @@
                   "  const responseJson = pm.response.json();",
                   "    pm.environment.set(\"project_id\", responseJson.id);",
                   "    pm.expect(responseJson.name).to.eql(pm.environment.get(\"project_name\"));",
+                  "    pm.environment.unset(\"project_name\");",
                   "});"
                 ],
                 "type": "text/javascript"
