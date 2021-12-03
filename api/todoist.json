@@ -51,10 +51,33 @@
                   "script": {
                     "id": "7985d993-0344-4aa2-b793-76562acf24dd",
                     "exec": [
-                      "pm.test(\"Status code is 400 Bad request not sending task content\", () => {",
-                      "  pm.response.to.have.status(400);",
+                      "pm.test(\"Task name is new task\", () => {",
+                      "  const responseJson = pm.response.json();",
+                      "    pm.environment.set(\"task_id\", responseJson.id);",
+                      "    pm.expect(responseJson.content).to.eql(pm.environment.get(\"task_content\"));",
+                      "    pm.environment.unset(\"task_content\");",
+                      "",
                       "});",
+                      "",
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200 sending name\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      "",
                       ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "7a140884-157d-4e92-be57-ba2ec2a47b5e",
+                    "exec": [
+                      "pm.environment.set(\"task_content\", \"new task\");"
                     ],
                     "type": "text/javascript"
                   }
@@ -67,7 +90,30 @@
               "request": {
                 "method": "POST",
                 "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "content",
+                      "value": "{{task_content}}",
+                      "type": "text"
+                    }
+                  ]
+                },
                 "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
+            },
+            {
+              "name": "getActiveTask",
+              "id": "1f8d880e-dfa4-4a8c-8c32-51f63f056ed1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
               },
               "response": []
             }
@@ -120,6 +166,52 @@
               "request": {
                 "method": "GET",
                 "header": [],
+                "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
+            },
+            {
+              "name": "createNewTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c2345264-8e6e-45ac-bd39-3947e470422c",
+                    "exec": [
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "6ed62fff-e1d6-4c5e-b9b0-72a9e6741be8",
+                    "exec": [
+                      "pm.environment.set(\"task_content\", \"new task\");"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "ef098ee9-7a05-4437-a406-f213fb22698b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "content",
+                      "value": "{{task_content}}",
+                      "type": "text"
+                    }
+                  ]
+                },
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
