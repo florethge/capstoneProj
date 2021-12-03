@@ -103,19 +103,6 @@
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
-            },
-            {
-              "name": "getActiveTask",
-              "id": "1f8d880e-dfa4-4a8c-8c32-51f63f056ed1",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
-              },
-              "response": []
             }
           ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
