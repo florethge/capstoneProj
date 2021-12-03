@@ -429,7 +429,8 @@
                     "exec": [
                       "pm.test(\"Status code is 204 update project\", () => {",
                       "  pm.response.to.have.status(204);",
-                      "});"
+                      "});",
+                      ""
                     ],
                     "type": "text/javascript"
                   }
