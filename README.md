@@ -20,6 +20,33 @@ PASSWORD = a_valid_password
 ```
 npm install
 ```
+### Project Structure
+|-- README.md
+|-- package-lock.json
+|-- package.json
+|-- pom
+|   |-- data
+|   |   |-- constants.js
+|   |   `-- roles.js
+|   |-- pages
+|   |   |-- addProject-page.js
+|   |   |-- date-page.js
+|   |   |-- inbox-page.js
+|   |   |-- login-page.js
+|   |   |-- menuFavorites-page.js
+|   |   |-- navbar-page.js
+|   |   |-- signup-page.js
+|   |   `-- task-page.js
+|   `-- tests
+|       |-- addTask.test.js
+|       |-- login.test.js
+|       `-- newProject.test.js
+`-- report.html
+
+### Project Stack
+Node
+Testcafe
+JavaScript
 
 ### Dependencies
 - dotenv
@@ -38,3 +65,5 @@ npm install
 |test-all-chrome|Runs all tests on a Chrome instance.|  
 |test-allReport-chrome|Runs all tests on a Chrome instance generating an HTML Test Report.|   
 |test-smoke-chrome|Run all smoke tests on a Chrome instance.|  
+|eslint| Run Eslint|
+

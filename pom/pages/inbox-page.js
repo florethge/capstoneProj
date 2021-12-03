@@ -11,6 +11,7 @@ class inbox{
         this.deleteTaskButton = Selector('.menu_item').withAttribute('data-action-hint' , 'task-overflow-menu-delete')
         this.confirmationDeleteButton = Selector('.ist_button_red').withAttribute('type' , 'submit')
         this.quickAddProject = Selector('button[type = "button"]').withAttribute('data-track' , 'navigation|projects_quick_add')
+        this.tomorrowTag = Selector('.date_tom')
        
     }
     async openMenuToInbox(){

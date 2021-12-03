@@ -13,7 +13,8 @@
     "test-login-headless": "testcafe chrome:headless,firefox:headless pom/tests/login.test.js --test-scheduling",
     "test-all-chrome": "testcafe chrome pom/tests",
     "test-allReport-chrome": "testcafe chrome pom/tests --reporter html:report.html",
-    "test-smoke-chrome": "testcafe chrome pom/tests --test-meta type=smoke"
+    "test-smoke-chrome": "testcafe chrome pom/tests --test-meta type=smoke",
+    "eslint": "npx eslint . --ext .js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
