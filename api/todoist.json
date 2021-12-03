@@ -55,7 +55,7 @@
           "name": "Negative Forbidden",
           "item": [
             {
-              "name": "New Request",
+              "name": "getActiveTasks",
               "id": "a1d6e36c-d4d9-4b2b-98b3-43bbbf257ab6",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
