@@ -280,6 +280,19 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "New Request",
+              "id": "e36a1c29-c14a-4671-ba40-f3dbbe11e8ff",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
