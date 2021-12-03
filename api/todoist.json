@@ -419,7 +419,7 @@
               "response": []
             },
             {
-              "name": "getActiveTask Copy",
+              "name": "getActiveTask",
               "event": [
                 {
                   "listen": "test",
