@@ -524,9 +524,6 @@
                   "script": {
                     "id": "54e8c7f2-0a00-47fc-b587-f33e337219a1",
                     "exec": [
-                      "pm.test(\"Status code is 400 Bad request supported fields should be set and non-empty\", () => {",
-                      "  pm.response.to.have.status(400);",
-                      "});",
                       ""
                     ],
                     "type": "text/javascript"
@@ -556,7 +553,6 @@
                   ],
                   "variable": [
                     {
-                      "id": "a1e75307-4f2c-4334-b53f-82106e9b7ab6",
                       "key": "id",
                       "value": "{{task_id}}"
                     }
