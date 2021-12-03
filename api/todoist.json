@@ -175,7 +175,7 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "updateTasks",
               "id": "d1f2f2c4-933e-4b25-bc7e-c53dd53ba049",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
