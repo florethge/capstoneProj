@@ -362,40 +362,6 @@
                 }
               },
               "response": []
-            },
-            {
-              "name": "deleteTask Copy",
-              "id": "7e244488-eb15-4b99-a496-b7b0757abb67",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "tasks",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "id": "f8c3c5e3-4773-4b83-b836-29f972d3e2de",
-                      "key": "id",
-                      "value": "{{task_id}}"
-                    }
-                  ]
-                }
-              },
-              "response": []
             }
           ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
@@ -584,6 +550,40 @@
                 "method": "POST",
                 "header": [],
                 "url": "https://api.todoist.com/rest/v1/tasks/534/reopen"
+              },
+              "response": []
+            },
+            {
+              "name": "deleteTask Copy",
+              "id": "7e244488-eb15-4b99-a496-b7b0757abb67",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "f8c3c5e3-4773-4b83-b836-29f972d3e2de",
+                      "key": "id",
+                      "value": "{{task_id}}"
+                    }
+                  ]
+                }
               },
               "response": []
             }
