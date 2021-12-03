@@ -84,9 +84,9 @@
             "disableBodyPruning": true
           },
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [],
-            "url": null
+            "url": "https://api.todoist.com/rest/v1/projects"
           },
           "response": []
         }
