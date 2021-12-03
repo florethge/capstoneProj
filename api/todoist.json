@@ -412,7 +412,7 @@
               "response": []
             },
             {
-              "name": "closeTask Copy",
+              "name": "closeTask",
               "event": [
                 {
                   "listen": "test",
