@@ -1527,7 +1527,7 @@
               "response": []
             },
             {
-              "name": "getProject Negative",
+              "name": "getProject",
               "event": [
                 {
                   "listen": "test",
@@ -1557,7 +1557,7 @@
               "response": []
             },
             {
-              "name": "updateProject Negative",
+              "name": "updateProject",
               "event": [
                 {
                   "listen": "test",
