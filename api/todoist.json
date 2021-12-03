@@ -292,8 +292,8 @@
           "response": []
         },
         {
-          "name": "getProject Negative Copy",
-          "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
+          "name": "getProject",
+          "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -305,8 +305,8 @@
           "response": []
         },
         {
-          "name": "getProject",
-          "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
+          "name": "getProject Negative Copy",
+          "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
