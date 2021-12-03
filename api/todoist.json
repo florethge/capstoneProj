@@ -46,7 +46,7 @@
           "response": []
         },
         {
-          "name": "getAllProjects Copy",
+          "name": "getAllProjects Negative",
           "event": [
             {
               "listen": "test",
