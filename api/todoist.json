@@ -541,7 +541,7 @@
               "response": []
             },
             {
-              "name": "reopenTask Copy",
+              "name": "reopenTask",
               "event": [
                 {
                   "listen": "test",
