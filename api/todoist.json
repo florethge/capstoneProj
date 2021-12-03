@@ -89,7 +89,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "5ee85df4-b771-4aaa-bba7-e2e65ec23d70",
+                "id": "a851c3db-3ef0-4335-b2da-f4741fa0edb8",
                 "type": "text/javascript",
                 "exec": [
                   ""
@@ -99,10 +99,12 @@
             {
               "listen": "test",
               "script": {
-                "id": "87fa57c8-238a-4bee-9d2a-1b0b6bda33a6",
+                "id": "8c710ecf-80a3-44fa-bea1-58745ad5f041",
                 "type": "text/javascript",
                 "exec": [
-                  ""
+                  "pm.test(\"Status code is 401 Forbidden not authorized for \"+pm.info.requestName, () => {",
+                  "  pm.response.to.have.status(401);",
+                  "});"
                 ]
               }
             }
