@@ -48,40 +48,7 @@
         },
         {
           "name": "Negative",
-          "item": [
-            {
-              "name": "getActiveTasks Copy 2",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "e3ca295a-f3ad-4d3d-90ee-86a8587d11b6",
-                    "exec": [
-                      "pm.test(\"Content-Type header is application/json\", () => {",
-                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
-                      "});",
-                      "",
-                      "pm.test(\"Status code is 200\", () => {",
-                      "  pm.response.to.have.status(200);",
-                      "});",
-                      ""
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "c71c94e1-219e-4fb2-8f9e-1a9d6c7b581b",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": "https://api.todoist.com/rest/v1/tasks"
-              },
-              "response": []
-            }
-          ],
+          "item": [],
           "id": "91976169-6610-47fa-9612-1da54bd89cfb"
         },
         {
@@ -109,6 +76,38 @@
                 }
               ],
               "id": "6495a140-9a44-487b-aa59-0c0665516ef0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
+            },
+            {
+              "name": "getActiveTasks Copy 2",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e3ca295a-f3ad-4d3d-90ee-86a8587d11b6",
+                    "exec": [
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "c71c94e1-219e-4fb2-8f9e-1a9d6c7b581b",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
