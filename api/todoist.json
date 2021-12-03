@@ -280,56 +280,6 @@
                 }
               },
               "response": []
-            },
-            {
-              "name": "closeTask Copy",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "e4a4b739-1355-4379-acd2-98af56526350",
-                    "exec": [
-                      "pm.test(\"Status code is 204 update project\", () => {",
-                      "  pm.response.to.have.status(204);",
-                      "});",
-                      ""
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "97a7bbfc-521a-43f2-9ac1-496adc4c61fd",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "POST",
-                "header": [],
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/tasks/:id/close",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "tasks",
-                    ":id",
-                    "close"
-                  ],
-                  "variable": [
-                    {
-                      "id": "869c403e-67b8-460a-976f-d4ea93514506",
-                      "key": "id",
-                      "value": "{{task_id}}"
-                    }
-                  ]
-                }
-              },
-              "response": []
             }
           ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
@@ -453,6 +403,56 @@
                   ],
                   "variable": [
                     {
+                      "key": "id",
+                      "value": "{{task_id}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "closeTask Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "e4a4b739-1355-4379-acd2-98af56526350",
+                    "exec": [
+                      "pm.test(\"Status code is 204 update project\", () => {",
+                      "  pm.response.to.have.status(204);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "97a7bbfc-521a-43f2-9ac1-496adc4c61fd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id/close",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id",
+                    "close"
+                  ],
+                  "variable": [
+                    {
+                      "id": "869c403e-67b8-460a-976f-d4ea93514506",
                       "key": "id",
                       "value": "{{task_id}}"
                     }
