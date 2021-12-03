@@ -51,6 +51,21 @@
                   "script": {
                     "id": "7985d993-0344-4aa2-b793-76562acf24dd",
                     "exec": [
+                      "pm.test(\"Task name is new task\", () => {",
+                      "  const responseJson = pm.response.json();",
+                      "    pm.environment.set(\"task_id\", responseJson.id);",
+                      "    pm.expect(responseJson.content).to.eql(pm.environment.get(\"task_content\"));",
+                      "    pm.environment.unset(\"task_content\");",
+                      "",
+                      "});",
+                      "",
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200 sending name\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
                       "",
                       ""
                     ],
@@ -122,6 +137,54 @@
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
+            },
+            {
+              "name": "getActiveTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "23cfb155-ee45-4ee2-93bd-010ada53b41a",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request task id is invalid\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "1f8d880e-dfa4-4a8c-8c32-51f63f056ed1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
             }
           ],
           "id": "91976169-6610-47fa-9612-1da54bd89cfb"
@@ -150,21 +213,6 @@
                   "script": {
                     "id": "c2345264-8e6e-45ac-bd39-3947e470422c",
                     "exec": [
-                      "pm.test(\"Task name is new task\", () => {",
-                      "  const responseJson = pm.response.json();",
-                      "    pm.environment.set(\"task_id\", responseJson.id);",
-                      "    pm.expect(responseJson.content).to.eql(pm.environment.get(\"task_content\"));",
-                      "    pm.environment.unset(\"task_content\");",
-                      "",
-                      "});",
-                      "",
-                      "pm.test(\"Content-Type header is application/json\", () => {",
-                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
-                      "});",
-                      "",
-                      "pm.test(\"Status code is 200 sending name\", () => {",
-                      "  pm.response.to.have.status(200);",
-                      "});",
                       "",
                       ""
                     ],
