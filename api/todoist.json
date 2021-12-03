@@ -698,6 +698,33 @@
                 "url": "https://api.todoist.com/rest/v1/projects/"
               },
               "response": []
+            },
+            {
+              "name": "deleteProject Negative Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "4650d353-ab21-4c96-ad2c-04fdbb2733bf",
+                    "exec": [
+                      "pm.test(\"Status code is 405 no project id is given on delete project\", () => {",
+                      "  pm.response.to.have.status(405);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "e8e21328-9878-46e6-a590-f5754fcf7de6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/projects/"
+              },
+              "response": []
             }
           ],
           "id": "a0db810a-279e-4d4e-be6a-fe61d672a810"
