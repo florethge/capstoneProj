@@ -674,6 +674,20 @@
             },
             {
               "name": "deleteProject Negative",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "34398021-4256-439e-b8d5-fed5995c13f2",
+                    "exec": [
+                      "pm.test(\"Status code is 400 name, color or favorite fields not set (Bad request)\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "09b9aeb2-ffd5-4239-8536-dc6821f89694",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
