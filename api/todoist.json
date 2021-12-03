@@ -14,7 +14,7 @@
       "name": "Projects",
       "item": [
         {
-          "name": "New Request",
+          "name": "getAllProjects",
           "id": "f2e1d278-935c-43ac-b7fc-2a5c299453c2",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -22,7 +22,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": null
+            "url": "https://api.todoist.com/rest/v1/projects"
           },
           "response": []
         }
