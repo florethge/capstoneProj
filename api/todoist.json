@@ -510,7 +510,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "b6dbd16a-565b-4192-9465-b61305922b3a",
+        "id": "4efd0f18-98a5-4607-81db-4be2acc6b805",
         "type": "text/javascript",
         "exec": [
           ""
@@ -520,10 +520,12 @@
     {
       "listen": "test",
       "script": {
-        "id": "aec06d06-68fb-4941-9805-8e5db29c78dc",
+        "id": "12921b7a-7f47-43bc-b834-8a2f8a888f20",
         "type": "text/javascript",
         "exec": [
-          ""
+          "pm.test(\"Response time is less than 200ms\", function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(900);",
+          "});"
         ]
       }
     }
