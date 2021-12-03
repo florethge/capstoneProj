@@ -103,62 +103,9 @@
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
-            }
-          ],
-          "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
-        },
-        {
-          "name": "Negative",
-          "item": [
-            {
-              "name": "createNewTask",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "cfb53e06-5b71-4be1-bc96-8ff8a174fabe",
-                    "exec": [
-                      "pm.test(\"Status code is 400 Bad request not sending task content\", () => {",
-                      "  pm.response.to.have.status(400);",
-                      "});",
-                      ""
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "b3d3febf-506a-483a-99bb-f40397070492",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "POST",
-                "header": [],
-                "url": "https://api.todoist.com/rest/v1/tasks"
-              },
-              "response": []
-            }
-          ],
-          "id": "91976169-6610-47fa-9612-1da54bd89cfb"
-        },
-        {
-          "name": "Negative Forbidden",
-          "item": [
-            {
-              "name": "getActiveTasks",
-              "id": "a1d6e36c-d4d9-4b2b-98b3-43bbbf257ab6",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": "https://api.todoist.com/rest/v1/tasks"
-              },
-              "response": []
             },
             {
-              "name": "createNewTask",
+              "name": "createNewTask Copy",
               "event": [
                 {
                   "listen": "test",
@@ -214,6 +161,59 @@
                     }
                   ]
                 },
+                "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
+            }
+          ],
+          "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
+        },
+        {
+          "name": "Negative",
+          "item": [
+            {
+              "name": "createNewTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "cfb53e06-5b71-4be1-bc96-8ff8a174fabe",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request not sending task content\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "b3d3febf-506a-483a-99bb-f40397070492",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
+            }
+          ],
+          "id": "91976169-6610-47fa-9612-1da54bd89cfb"
+        },
+        {
+          "name": "Negative Forbidden",
+          "item": [
+            {
+              "name": "getActiveTasks",
+              "id": "a1d6e36c-d4d9-4b2b-98b3-43bbbf257ab6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
