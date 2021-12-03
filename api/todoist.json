@@ -854,9 +854,7 @@
                   "script": {
                     "id": "5d5fa6f4-cd9b-42c4-a382-988020fec917",
                     "exec": [
-                      "pm.test(\"Status code is 405 no task id is given on delete task\", () => {",
-                      "  pm.response.to.have.status(405);",
-                      "});"
+                      ""
                     ],
                     "type": "text/javascript"
                   }
@@ -869,7 +867,27 @@
               "request": {
                 "method": "DELETE",
                 "header": [],
-                "url": "https://api.todoist.com/rest/v1/tasks/"
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{task_id}}"
+                    }
+                  ]
+                }
               },
               "response": []
             }
