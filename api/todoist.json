@@ -569,7 +569,7 @@
               "response": []
             },
             {
-              "name": "deleteTask Copy",
+              "name": "deleteTask",
               "event": [
                 {
                   "listen": "test",
