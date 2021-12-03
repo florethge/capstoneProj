@@ -475,6 +475,19 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "deleteProject Negative",
+              "id": "bd870c91-5c98-48de-9b59-533e79da4558",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "b2055961-a837-41e6-98b1-9617b8110985"
@@ -616,19 +629,6 @@
                     }
                   ]
                 }
-              },
-              "response": []
-            },
-            {
-              "name": "deleteProject Negative",
-              "id": "bd870c91-5c98-48de-9b59-533e79da4558",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
               },
               "response": []
             }
