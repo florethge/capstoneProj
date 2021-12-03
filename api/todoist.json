@@ -184,6 +184,11 @@
           ]
         },
         {
+          "name": "New Folder",
+          "item": [],
+          "id": "b2055961-a837-41e6-98b1-9617b8110985"
+        },
+        {
           "name": "getAllProjects",
           "event": [
             {
@@ -346,6 +351,23 @@
         },
         {
           "name": "getProject Negative",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ba32fe75-da20-41b7-bea0-40059e7424bc",
+                "exec": [
+                  "pm.test(\"Status code is 404 not found (invalid id)\", () => {",
+                  "  pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
           "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -353,12 +375,59 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": null
+            "url": "https://api.todoist.com/rest/v1/projects/2203306141"
           },
           "response": []
         },
         {
           "name": "getProject",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "86efe67c-14a5-4ffe-9525-a6871f7c53d5",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "d98b5648-2204-42a9-9693-c596e8e5dc36",
+                "exec": [
+                  "pm.test(\"Content-Type header is application/json\", () => {",
+                  "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                  "});",
+                  "",
+                  "const schema = {",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"number\"",
+                  "    },",
+                  "    \"name\": {",
+                  "      \"type\": \"string\"",
+                  "    },",
+                  "    \"color\": {",
+                  "      \"type\": \"number\"",
+                  "    }",
+                  "  }",
+                  "};",
+                  "pm.test('Schema is valid for id and name', function() {",
+                  "  pm.response.to.have.jsonSchema(schema);",
+                  "});",
+                  "",
+                  "pm.test(\"Status code is 200 get project\", () => {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
           "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -366,7 +435,31 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": null
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "https://api.todoist.com/rest/v1/projects/:id",
+              "protocol": "https",
+              "host": [
+                "api",
+                "todoist",
+                "com"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "projects",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{project_id}}"
+                }
+              ]
+            }
           },
           "response": []
         }
