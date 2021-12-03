@@ -87,7 +87,33 @@
               "response": []
             }
           ],
-          "id": "7fc71e65-7b92-40f2-865a-2adb2f1b0de5"
+          "id": "7fc71e65-7b92-40f2-865a-2adb2f1b0de5",
+          "auth": {
+            "type": "bearer",
+            "bearer": {}
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "5ee85df4-b771-4aaa-bba7-e2e65ec23d70",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "87fa57c8-238a-4bee-9d2a-1b0b6bda33a6",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
         }
       ],
       "id": "958d8ff8-696c-481d-8968-b75826d68712"
