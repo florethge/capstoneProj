@@ -24,9 +24,12 @@
                   "script": {
                     "id": "b736a220-fb63-49c5-92e0-59f46a440886",
                     "exec": [
-                      "pm.test(\"Status code is 401 Forbidden not authorized\", () => {",
-                      "  pm.response.to.have.status(401);",
-                      "});"
+                      "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      "",
+                      "",
+                      ""
                     ],
                     "type": "text/javascript"
                   }
@@ -37,6 +40,10 @@
                 "disableBodyPruning": true
               },
               "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {}
+                },
                 "method": "POST",
                 "header": [],
                 "body": {
@@ -45,7 +52,8 @@
                     {
                       "key": "name",
                       "value": "test project",
-                      "type": "text"
+                      "type": "text",
+                      "disabled": true
                     }
                   ]
                 },
