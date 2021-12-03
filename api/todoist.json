@@ -498,6 +498,19 @@
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
+    },
+    {
+      "name": "New Request",
+      "id": "ffa42a6e-2549-4e27-9be8-18a2d9e22214",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
     }
   ],
   "auth": {
