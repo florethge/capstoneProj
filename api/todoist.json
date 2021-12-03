@@ -370,19 +370,6 @@
                 }
               },
               "response": []
-            },
-            {
-              "name": "updateProject",
-              "id": "54ba0d6e-465d-4e2e-97d6-3046aad7b0d0",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
-              },
-              "response": []
             }
           ],
           "id": "b2055961-a837-41e6-98b1-9617b8110985"
@@ -477,6 +464,19 @@
                 "method": "GET",
                 "header": [],
                 "url": "https://api.todoist.com/rest/v1/projects/2203306141"
+              },
+              "response": []
+            },
+            {
+              "name": "updateProject",
+              "id": "54ba0d6e-465d-4e2e-97d6-3046aad7b0d0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
               },
               "response": []
             }
