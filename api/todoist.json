@@ -78,7 +78,7 @@
           "response": []
         },
         {
-          "name": "createNewProject",
+          "name": "createNewProject Negative",
           "event": [
             {
               "listen": "test",
