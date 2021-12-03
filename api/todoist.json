@@ -76,6 +76,19 @@
             "url": "https://api.todoist.com/rest/v1/projects"
           },
           "response": []
+        },
+        {
+          "name": "New Request",
+          "id": "ee64b9a0-002b-4a3b-8958-a9e8f69cadf7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
