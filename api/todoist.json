@@ -51,6 +51,21 @@
           "item": [
             {
               "name": "createNewTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "cfb53e06-5b71-4be1-bc96-8ff8a174fabe",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request not sending task content\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "b3d3febf-506a-483a-99bb-f40397070492",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
