@@ -203,7 +203,7 @@
               "response": []
             },
             {
-              "name": "deleteProject Negative Copy",
+              "name": "deleteProject",
               "event": [
                 {
                   "listen": "test",
