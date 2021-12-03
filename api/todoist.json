@@ -7,7 +7,13 @@
   "item": [
     {
       "name": "Tasks",
-      "item": [],
+      "item": [
+        {
+          "name": "New Folder",
+          "item": [],
+          "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
+        }
+      ],
       "id": "958d8ff8-696c-481d-8968-b75826d68712"
     },
     {
