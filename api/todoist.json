@@ -488,6 +488,19 @@
                 "url": null
               },
               "response": []
+            },
+            {
+              "name": "deleteProject Copy",
+              "id": "09b9aeb2-ffd5-4239-8536-dc6821f89694",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "b2055961-a837-41e6-98b1-9617b8110985"
