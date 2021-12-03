@@ -115,7 +115,7 @@
               "response": []
             },
             {
-              "name": "getProject Negative Forbidden",
+              "name": "getProject",
               "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
