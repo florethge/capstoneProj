@@ -24,12 +24,9 @@
                   "script": {
                     "id": "b736a220-fb63-49c5-92e0-59f46a440886",
                     "exec": [
-                      "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
-                      "  pm.response.to.have.status(400);",
-                      "});",
-                      "",
-                      "",
-                      ""
+                      "pm.test(\"Status code is 401 Forbidden not authorized for create new project\", () => {",
+                      "  pm.response.to.have.status(401);",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -40,10 +37,381 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "auth": {
-                  "type": "bearer",
-                  "bearer": {}
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "test project",
+                      "type": "text"
+                    }
+                  ]
                 },
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "test project",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getAllProjects",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "56bc856b-9454-4b7f-ae09-624f0fc9076a",
+                    "exec": [
+                      "pm.test(\"Status code is 401 Forbidden not authorized for get all projects\", () => {",
+                      "  pm.response.to.have.status(401);",
+                      "});",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "bf74a3a3-fd06-40de-971c-28611cfe3c93",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/projects"
+              },
+              "response": []
+            },
+            {
+              "name": "getProject",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "39eeef19-2ae8-4862-b580-ddee345a0e03",
+                    "exec": [
+                      "pm.test(\"Status code is 401 Forbidden not authorized for get project\", () => {",
+                      "  pm.response.to.have.status(401);",
+                      "});",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "465f7e0c-de75-4ac3-bbba-980064518eba",
+          "auth": {
+            "type": "bearer",
+            "bearer": {}
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "042e3589-2e08-4dc7-9e5e-e9a8c5c2a937",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "4838e7c6-304c-4f46-97ba-ce8c7a49ee44",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Positive",
+          "item": [
+            {
+              "name": "createNewProject",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "200d0b18-c6b4-4ff7-b0c5-a6b98d866aca",
+                    "exec": [
+                      "const schema = {",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"number\"",
+                      "    },",
+                      "    \"name\": {",
+                      "      \"type\": \"string\"",
+                      "    }",
+                      "  }",
+                      "};",
+                      "pm.test('Schema is valid for id and name', function() {",
+                      "  pm.response.to.have.jsonSchema(schema);",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200 sending name\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      "",
+                      "pm.test(\"Project name is test_name\", () => {",
+                      "  const responseJson = pm.response.json();",
+                      "    pm.environment.set(\"project_id\", responseJson.id);",
+                      "    pm.expect(responseJson.name).to.eql(pm.environment.get(\"project_name\"));",
+                      "    pm.environment.unset(\"project_name\");",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "08692abc-5d62-4202-b7d8-cda32e566138",
+                    "exec": [
+                      "pm.environment.set(\"project_name\", \"test_name\");"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "0a5afa7c-097b-40dc-a2ce-81db707bc255",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "{{project_name}}",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": "https://api.todoist.com/rest/v1/projects"
+              },
+              "response": []
+            },
+            {
+              "name": "getAllProjects",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "bb9e5ab9-9698-46d8-bf52-05859214c42f",
+                    "exec": [
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "f2e1d278-935c-43ac-b7fc-2a5c299453c2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/projects"
+              },
+              "response": []
+            },
+            {
+              "name": "getProject",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "86efe67c-14a5-4ffe-9525-a6871f7c53d5",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "d98b5648-2204-42a9-9693-c596e8e5dc36",
+                    "exec": [
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "const schema = {",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"number\"",
+                      "    },",
+                      "    \"name\": {",
+                      "      \"type\": \"string\"",
+                      "    },",
+                      "    \"color\": {",
+                      "      \"type\": \"number\"",
+                      "    }",
+                      "  }",
+                      "};",
+                      "pm.test('Schema is valid for id and name', function() {",
+                      "  pm.response.to.have.jsonSchema(schema);",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200 get project\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{project_id}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "id": "54ba0d6e-465d-4e2e-97d6-3046aad7b0d0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
+            }
+          ],
+          "id": "b2055961-a837-41e6-98b1-9617b8110985"
+        },
+        {
+          "name": "Negative",
+          "item": [
+            {
+              "name": "createNewProject Negative",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "80356024-2da8-4067-96b0-c1dec1cc56b3",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "ee64b9a0-002b-4a3b-8958-a9e8f69cadf7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
                 "method": "POST",
                 "header": [],
                 "body": {
@@ -83,271 +451,37 @@
               "response": []
             },
             {
-              "name": "getAllProjects",
+              "name": "getProject Negative",
               "event": [
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56bc856b-9454-4b7f-ae09-624f0fc9076a",
+                    "id": "ba32fe75-da20-41b7-bea0-40059e7424bc",
                     "exec": [
-                      "pm.test(\"Content-Type header is application/json\", () => {",
-                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "pm.test(\"Status code is 404 not found (invalid id)\", () => {",
+                      "  pm.response.to.have.status(404);",
                       "});",
                       "",
-                      "pm.test(\"Status code is 200\", () => {",
-                      "  pm.response.to.have.status(200);",
-                      "});",
+                      "",
                       ""
                     ],
                     "type": "text/javascript"
                   }
                 }
               ],
-              "id": "bf74a3a3-fd06-40de-971c-28611cfe3c93",
+              "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": "https://api.todoist.com/rest/v1/projects"
-              },
-              "response": []
-            },
-            {
-              "name": "getProject",
-              "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
+                "url": "https://api.todoist.com/rest/v1/projects/2203306141"
               },
               "response": []
             }
           ],
-          "id": "465f7e0c-de75-4ac3-bbba-980064518eba",
-          "auth": {
-            "type": "bearer",
-            "bearer": {}
-          },
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "042e3589-2e08-4dc7-9e5e-e9a8c5c2a937",
-                "type": "text/javascript",
-                "exec": [
-                  ""
-                ]
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "id": "4838e7c6-304c-4f46-97ba-ce8c7a49ee44",
-                "type": "text/javascript",
-                "exec": [
-                  ""
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "name": "getAllProjects",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "bb9e5ab9-9698-46d8-bf52-05859214c42f",
-                "exec": [
-                  "pm.test(\"Content-Type header is application/json\", () => {",
-                  "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
-                  "});",
-                  "",
-                  "pm.test(\"Status code is 200\", () => {",
-                  "  pm.response.to.have.status(200);",
-                  "});",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "id": "f2e1d278-935c-43ac-b7fc-2a5c299453c2",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "https://api.todoist.com/rest/v1/projects"
-          },
-          "response": []
-        },
-        {
-          "name": "createNewProject Negative",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "80356024-2da8-4067-96b0-c1dec1cc56b3",
-                "exec": [
-                  "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
-                  "  pm.response.to.have.status(400);",
-                  "});",
-                  "",
-                  "",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "id": "ee64b9a0-002b-4a3b-8958-a9e8f69cadf7",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {}
-            },
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "name",
-                  "value": "test project",
-                  "type": "text",
-                  "disabled": true
-                }
-              ]
-            },
-            "url": {
-              "raw": "https://api.todoist.com/rest/v1/projects",
-              "protocol": "https",
-              "host": [
-                "api",
-                "todoist",
-                "com"
-              ],
-              "path": [
-                "rest",
-                "v1",
-                "projects"
-              ],
-              "query": [
-                {
-                  "key": "name",
-                  "value": "test project",
-                  "type": "text",
-                  "disabled": true
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "createNewProject",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "200d0b18-c6b4-4ff7-b0c5-a6b98d866aca",
-                "exec": [
-                  "const schema = {",
-                  "  \"type\": \"object\",",
-                  "  \"properties\": {",
-                  "    \"id\": {",
-                  "      \"type\": \"number\"",
-                  "    },",
-                  "    \"name\": {",
-                  "      \"type\": \"string\"",
-                  "    }",
-                  "  }",
-                  "};",
-                  "pm.test('Schema is valid for id and name', function() {",
-                  "  pm.response.to.have.jsonSchema(schema);",
-                  "});",
-                  "",
-                  "pm.test(\"Status code is 200 sending name\", () => {",
-                  "  pm.response.to.have.status(200);",
-                  "});",
-                  "",
-                  "pm.test(\"Project name is test_name\", () => {",
-                  "  const responseJson = pm.response.json();",
-                  "    pm.environment.set(\"project_id\", responseJson.id);",
-                  "    pm.expect(responseJson.name).to.eql(pm.environment.get(\"project_name\"));",
-                  "    pm.environment.unset(\"project_name\");",
-                  "});"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "08692abc-5d62-4202-b7d8-cda32e566138",
-                "exec": [
-                  "pm.environment.set(\"project_name\", \"test_name\");"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "id": "0a5afa7c-097b-40dc-a2ce-81db707bc255",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "name",
-                  "value": "{{project_name}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "https://api.todoist.com/rest/v1/projects"
-          },
-          "response": []
-        },
-        {
-          "name": "getProject Negative",
-          "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": null
-          },
-          "response": []
-        },
-        {
-          "name": "getProject",
-          "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": null
-          },
-          "response": []
+          "id": "a0db810a-279e-4d4e-be6a-fe61d672a810"
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
