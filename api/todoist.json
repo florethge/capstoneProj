@@ -517,14 +517,48 @@
             },
             {
               "name": "updateProject Negative",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "d49f934d-aa2e-4e14-96ac-f74732580134",
+                    "exec": [
+                      "pm.test(\"Status code is 400 name, color or favorite fields not set (Bad request)\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "54ba0d6e-465d-4e2e-97d6-3046aad7b0d0",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
               },
               "response": []
             }
