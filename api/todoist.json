@@ -521,7 +521,7 @@
                   "variable": [
                     {
                       "key": "id",
-                      "value": null
+                      "value": "{{project_id}}"
                     }
                   ]
                 }
