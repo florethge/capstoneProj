@@ -173,39 +173,6 @@
                 }
               },
               "response": []
-            },
-            {
-              "name": "updateTask",
-              "id": "d1f2f2c4-933e-4b25-bc7e-c53dd53ba049",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "tasks",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "key": "id",
-                      "value": "{{task_id}}"
-                    }
-                  ]
-                }
-              },
-              "response": []
             }
           ],
           "id": "a94bef69-b4df-4078-8a6c-ad6e0f307dd7"
@@ -283,6 +250,39 @@
                     {
                       "key": "id",
                       "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateTask",
+              "id": "d1f2f2c4-933e-4b25-bc7e-c53dd53ba049",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{task_id}}"
                     }
                   ]
                 }
