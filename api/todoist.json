@@ -251,7 +251,7 @@
           "response": []
         },
         {
-          "name": "getProject Negative Copy",
+          "name": "getProject",
           "id": "3b00b5f3-5978-447b-bf2a-9db631919055",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
