@@ -601,7 +601,7 @@
               "response": []
             },
             {
-              "name": "closeTask Copy 2",
+              "name": "closeTask",
               "event": [
                 {
                   "listen": "test",
