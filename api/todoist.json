@@ -14,7 +14,7 @@
       "name": "Projects",
       "item": [
         {
-          "name": "getAllProjects",
+          "name": "New Request",
           "id": "f2e1d278-935c-43ac-b7fc-2a5c299453c2",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
