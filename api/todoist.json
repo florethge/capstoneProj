@@ -259,8 +259,8 @@
                   "script": {
                     "id": "4650d353-ab21-4c96-ad2c-04fdbb2733bf",
                     "exec": [
-                      "pm.test(\"Status code is 405 no project id is given on delete project\", () => {",
-                      "  pm.response.to.have.status(405);",
+                      "pm.test(\"Status code is 401 Forbidden not authorized for delete project\", () => {",
+                      "  pm.response.to.have.status(401);",
                       "});"
                     ],
                     "type": "text/javascript"
@@ -274,7 +274,27 @@
               "request": {
                 "method": "DELETE",
                 "header": [],
-                "url": "https://api.todoist.com/rest/v1/projects/"
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{project_id}}"
+                    }
+                  ]
+                }
               },
               "response": []
             }
