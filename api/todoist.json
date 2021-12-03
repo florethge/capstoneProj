@@ -478,14 +478,53 @@
             },
             {
               "name": "deleteProject",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "4f8e2665-fb01-4471-b421-8bc48321ed1a",
+                    "exec": [
+                      "pm.test(\"Status code is 204 delete a project\", () => {",
+                      "  pm.response.to.have.status(204);",
+                      "});",
+                      "pm.environment.unset(\"project_id\");"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "bd870c91-5c98-48de-9b59-533e79da4558",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "DELETE",
                 "header": [],
-                "url": null
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
               },
               "response": []
             }
