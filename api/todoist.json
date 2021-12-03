@@ -418,6 +418,54 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "updateProject Negative Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "b9fd727c-018b-400c-a974-602247580f98",
+                    "exec": [
+                      "pm.test(\"Status code is 400 name, color or favorite fields not set (Bad request)\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "9061e893-69a1-4783-8753-90a4bd7cffdc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6dedc62d-6ad2-48e1-9b34-f97ee288edb8",
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
             }
           ],
           "id": "b2055961-a837-41e6-98b1-9617b8110985"
@@ -554,54 +602,6 @@
                   ],
                   "variable": [
                     {
-                      "key": "id",
-                      "value": null
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "updateProject Negative Copy",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "b9fd727c-018b-400c-a974-602247580f98",
-                    "exec": [
-                      "pm.test(\"Status code is 400 name, color or favorite fields not set (Bad request)\", () => {",
-                      "  pm.response.to.have.status(400);",
-                      "});"
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "9061e893-69a1-4783-8753-90a4bd7cffdc",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "POST",
-                "header": [],
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/projects/:id",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "projects",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "id": "6dedc62d-6ad2-48e1-9b34-f97ee288edb8",
                       "key": "id",
                       "value": null
                     }
