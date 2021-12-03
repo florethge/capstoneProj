@@ -44,6 +44,38 @@
             "url": "https://api.todoist.com/rest/v1/projects"
           },
           "response": []
+        },
+        {
+          "name": "getAllProjects Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "56bc856b-9454-4b7f-ae09-624f0fc9076a",
+                "exec": [
+                  "pm.test(\"Content-Type header is application/json\", () => {",
+                  "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                  "});",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "bf74a3a3-fd06-40de-971c-28611cfe3c93",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "https://api.todoist.com/rest/v1/projects"
+          },
+          "response": []
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
