@@ -427,8 +427,8 @@
                   "script": {
                     "id": "b9fd727c-018b-400c-a974-602247580f98",
                     "exec": [
-                      "pm.test(\"Status code is 400 name, color or favorite fields not set (Bad request)\", () => {",
-                      "  pm.response.to.have.status(400);",
+                      "pm.test(\"Status code is 204 update project\", () => {",
+                      "  pm.response.to.have.status(204);",
                       "});"
                     ],
                     "type": "text/javascript"
@@ -442,6 +442,16 @@
               "request": {
                 "method": "POST",
                 "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "favorite",
+                      "value": "true",
+                      "type": "text"
+                    }
+                  ]
+                },
                 "url": {
                   "raw": "https://api.todoist.com/rest/v1/projects/:id",
                   "protocol": "https",
@@ -458,9 +468,8 @@
                   ],
                   "variable": [
                     {
-                      "id": "6dedc62d-6ad2-48e1-9b34-f97ee288edb8",
                       "key": "id",
-                      "value": null
+                      "value": "{{project_id}}"
                     }
                   ]
                 }
