@@ -847,7 +847,7 @@
               "response": []
             },
             {
-              "name": "deleteTask Copy 2",
+              "name": "deleteTask",
               "event": [
                 {
                   "listen": "test",
