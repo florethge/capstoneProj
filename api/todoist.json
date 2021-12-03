@@ -44,7 +44,7 @@
               "response": []
             },
             {
-              "name": "createNewTask Copy",
+              "name": "createNewTas",
               "event": [
                 {
                   "listen": "test",
