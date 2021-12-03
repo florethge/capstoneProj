@@ -372,7 +372,7 @@
               "response": []
             },
             {
-              "name": "New Request",
+              "name": "updateProject",
               "id": "54ba0d6e-465d-4e2e-97d6-3046aad7b0d0",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
