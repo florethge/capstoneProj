@@ -258,12 +258,27 @@
             },
             {
               "name": "updateTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c1587dd7-dd75-4dc8-a0e9-f8872481ab2e",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request supported fields should be set and non-empty\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "d1f2f2c4-933e-4b25-bc7e-c53dd53ba049",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
                 "url": {
                   "raw": "https://api.todoist.com/rest/v1/tasks/:id",
