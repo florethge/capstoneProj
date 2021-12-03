@@ -81,6 +81,19 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "getProject Negative Forbidden",
+              "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "465f7e0c-de75-4ac3-bbba-980064518eba"
@@ -287,19 +300,6 @@
         {
           "name": "getProject Negative",
           "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": null
-          },
-          "response": []
-        },
-        {
-          "name": "getProject Negative Forbidden",
-          "id": "d9d10a43-8ebe-449f-9392-a1c47b164eeb",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
