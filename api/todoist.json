@@ -171,10 +171,6 @@
                   "script": {
                     "id": "56bc856b-9454-4b7f-ae09-624f0fc9076a",
                     "exec": [
-                      "pm.test(\"Status code is 401 Forbidden not authorized for get all projects\", () => {",
-                      "  pm.response.to.have.status(401);",
-                      "});",
-                      "",
                       "",
                       ""
                     ],
