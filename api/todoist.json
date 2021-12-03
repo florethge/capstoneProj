@@ -76,6 +76,34 @@
                 "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
+            },
+            {
+              "name": "createNewTask Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7985d993-0344-4aa2-b793-76562acf24dd",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request not sending task content\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "4d4a5fa6-41e4-4a4f-ab83-44b15021b855",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/tasks"
+              },
+              "response": []
             }
           ],
           "id": "91976169-6610-47fa-9612-1da54bd89cfb"
