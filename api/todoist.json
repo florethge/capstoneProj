@@ -62,13 +62,6 @@
                   "script": {
                     "id": "bf2eac39-6239-461a-a38f-297ceafac47f",
                     "exec": [
-                      "pm.test(\"Content-Type header is application/json\", () => {",
-                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
-                      "});",
-                      "",
-                      "pm.test(\"Status code is 200\", () => {",
-                      "  pm.response.to.have.status(200);",
-                      "});",
                       ""
                     ],
                     "type": "text/javascript"
