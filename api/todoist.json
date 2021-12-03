@@ -201,6 +201,33 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "deleteProject Negative Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "4650d353-ab21-4c96-ad2c-04fdbb2733bf",
+                    "exec": [
+                      "pm.test(\"Status code is 405 no project id is given on delete project\", () => {",
+                      "  pm.response.to.have.status(405);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "e8e21328-9878-46e6-a590-f5754fcf7de6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "https://api.todoist.com/rest/v1/projects/"
+              },
+              "response": []
             }
           ],
           "id": "465f7e0c-de75-4ac3-bbba-980064518eba",
@@ -689,33 +716,6 @@
                 }
               ],
               "id": "09b9aeb2-ffd5-4239-8536-dc6821f89694",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "url": "https://api.todoist.com/rest/v1/projects/"
-              },
-              "response": []
-            },
-            {
-              "name": "deleteProject Negative Copy",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "4650d353-ab21-4c96-ad2c-04fdbb2733bf",
-                    "exec": [
-                      "pm.test(\"Status code is 405 no project id is given on delete project\", () => {",
-                      "  pm.response.to.have.status(405);",
-                      "});"
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "e8e21328-9878-46e6-a590-f5754fcf7de6",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
