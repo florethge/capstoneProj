@@ -12,7 +12,21 @@
     },
     {
       "name": "Projects",
-      "item": [],
+      "item": [
+        {
+          "name": "New Request",
+          "id": "f2e1d278-935c-43ac-b7fc-2a5c299453c2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
+        }
+      ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
     }
   ],
