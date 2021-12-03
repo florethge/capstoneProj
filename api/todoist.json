@@ -165,6 +165,21 @@
                   "script": {
                     "id": "c2345264-8e6e-45ac-bd39-3947e470422c",
                     "exec": [
+                      "pm.test(\"Task name is new task\", () => {",
+                      "  const responseJson = pm.response.json();",
+                      "    pm.environment.set(\"task_id\", responseJson.id);",
+                      "    pm.expect(responseJson.content).to.eql(pm.environment.get(\"task_content\"));",
+                      "    pm.environment.unset(\"task_content\");",
+                      "",
+                      "});",
+                      "",
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "pm.test(\"Status code is 200 sending name\", () => {",
+                      "  pm.response.to.have.status(200);",
+                      "});",
                       "",
                       ""
                     ],
