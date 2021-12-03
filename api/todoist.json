@@ -375,100 +375,94 @@
           "id": "b2055961-a837-41e6-98b1-9617b8110985"
         },
         {
-          "name": "Negative",
-          "item": [
+          "name": "createNewProject Negative",
+          "event": [
             {
-              "name": "createNewProject Negative",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "80356024-2da8-4067-96b0-c1dec1cc56b3",
-                    "exec": [
-                      "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
-                      "  pm.response.to.have.status(400);",
-                      "});",
-                      ""
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "ee64b9a0-002b-4a3b-8958-a9e8f69cadf7",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "formdata",
-                  "formdata": [
-                    {
-                      "key": "name",
-                      "value": "test project",
-                      "type": "text",
-                      "disabled": true
-                    }
-                  ]
-                },
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/projects",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "projects"
-                  ],
-                  "query": [
-                    {
-                      "key": "name",
-                      "value": "test project",
-                      "type": "text",
-                      "disabled": true
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "getProject Negative",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "ba32fe75-da20-41b7-bea0-40059e7424bc",
-                    "exec": [
-                      "pm.test(\"Status code is 404 not found (invalid id)\", () => {",
-                      "  pm.response.to.have.status(404);",
-                      "});",
-                      "",
-                      "",
-                      ""
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": "https://api.todoist.com/rest/v1/projects/2203306141"
-              },
-              "response": []
+              "listen": "test",
+              "script": {
+                "id": "80356024-2da8-4067-96b0-c1dec1cc56b3",
+                "exec": [
+                  "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
+                  "  pm.response.to.have.status(400);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
             }
           ],
-          "id": "a0db810a-279e-4d4e-be6a-fe61d672a810"
+          "id": "ee64b9a0-002b-4a3b-8958-a9e8f69cadf7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "test project",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://api.todoist.com/rest/v1/projects",
+              "protocol": "https",
+              "host": [
+                "api",
+                "todoist",
+                "com"
+              ],
+              "path": [
+                "rest",
+                "v1",
+                "projects"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "test project",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getProject Negative",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ba32fe75-da20-41b7-bea0-40059e7424bc",
+                "exec": [
+                  "pm.test(\"Status code is 404 not found (invalid id)\", () => {",
+                  "  pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "f25d4d84-f73c-433a-b2d5-cbe6f6fe3d83",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "https://api.todoist.com/rest/v1/projects/2203306141"
+          },
+          "response": []
         }
       ],
       "id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
