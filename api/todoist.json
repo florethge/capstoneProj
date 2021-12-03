@@ -15,6 +15,28 @@
       "item": [
         {
           "name": "getAllProjects",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "bb9e5ab9-9698-46d8-bf52-05859214c42f",
+                "exec": [
+                  "pm.test(\"Content-Type header is application/json\", () => {",
+                  "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                  "});",
+                  "",
+                  "pm.test(\"Status code is 200\", () => {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Status code is 500\", () => {",
+                  "  pm.response.to.have.status(500);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
           "id": "f2e1d278-935c-43ac-b7fc-2a5c299453c2",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
