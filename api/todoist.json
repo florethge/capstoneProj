@@ -420,7 +420,7 @@
               "response": []
             },
             {
-              "name": "updateProject Negative Copy",
+              "name": "updateProject",
               "event": [
                 {
                   "listen": "test",
