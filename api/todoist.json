@@ -1,0 +1,19 @@
+{
+  "info": {
+    "_postman_id": "12e3fb0a-f985-4b11-8924-3b626888c268",
+    "name": "capstone",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tasks",
+      "item": [],
+      "_postman_id": "958d8ff8-696c-481d-8968-b75826d68712"
+    },
+    {
+      "name": "Projects",
+      "item": [],
+      "_postman_id": "3f9649a5-deee-4bf2-8ae1-e8ab8fe5ad9b"
+    }
+  ]
+}
