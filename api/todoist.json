@@ -217,10 +217,40 @@
               "script": {
                 "id": "200d0b18-c6b4-4ff7-b0c5-a6b98d866aca",
                 "exec": [
-                  "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
-                  "  pm.response.to.have.status(400);",
+                  "const schema = {",
+                  "  \"type\": \"object\",",
+                  "  \"properties\": {",
+                  "    \"id\": {",
+                  "      \"type\": \"number\"",
+                  "    },",
+                  "    \"name\": {",
+                  "      \"type\": \"string\"",
+                  "    }",
+                  "  }",
+                  "};",
+                  "pm.test('Schema is valid for id and name', function() {",
+                  "  pm.response.to.have.jsonSchema(schema);",
                   "});",
-                  ""
+                  "",
+                  "pm.test(\"Status code is 200 sending name\", () => {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Project name is test_name\", () => {",
+                  "  const responseJson = pm.response.json();",
+                  "    pm.environment.set(\"project_id\", responseJson.id);",
+                  "    pm.expect(responseJson.name).to.eql(pm.environment.get(\"project_name\"));",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "08692abc-5d62-4202-b7d8-cda32e566138",
+                "exec": [
+                  "pm.environment.set(\"project_name\", \"test_name\");"
                 ],
                 "type": "text/javascript"
               }
@@ -233,6 +263,16 @@
           "request": {
             "method": "POST",
             "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "{{project_name}}",
+                  "type": "text"
+                }
+              ]
+            },
             "url": "https://api.todoist.com/rest/v1/projects"
           },
           "response": []
