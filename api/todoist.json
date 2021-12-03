@@ -185,6 +185,55 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "getActiveTask Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1dbbb575-d6d0-4e50-8362-d34b683bfaf8",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request task id is invalid\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "f6fd69d9-9d09-47c1-86a6-63f7f66b9578",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "3b028e08-6845-489f-a08e-85d470bad303",
+                      "key": "id",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
             }
           ],
           "id": "91976169-6610-47fa-9612-1da54bd89cfb"
