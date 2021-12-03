@@ -15,7 +15,74 @@
       "item": [
         {
           "name": "Negative Forbidden",
-          "item": [],
+          "item": [
+            {
+              "name": "createNewProject Negative Forbidden",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "b736a220-fb63-49c5-92e0-59f46a440886",
+                    "exec": [
+                      "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
+                      "  pm.response.to.have.status(400);",
+                      "});",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "968a2b7a-b087-4c99-b7e3-c555c007c44d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {}
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "test project",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/projects",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "projects"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "test project",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
           "id": "465f7e0c-de75-4ac3-bbba-980064518eba"
         },
         {
@@ -102,72 +169,6 @@
             }
           ],
           "id": "ee64b9a0-002b-4a3b-8958-a9e8f69cadf7",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {}
-            },
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "name",
-                  "value": "test project",
-                  "type": "text",
-                  "disabled": true
-                }
-              ]
-            },
-            "url": {
-              "raw": "https://api.todoist.com/rest/v1/projects",
-              "protocol": "https",
-              "host": [
-                "api",
-                "todoist",
-                "com"
-              ],
-              "path": [
-                "rest",
-                "v1",
-                "projects"
-              ],
-              "query": [
-                {
-                  "key": "name",
-                  "value": "test project",
-                  "type": "text",
-                  "disabled": true
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "createNewProject Negative Forbidden",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "b736a220-fb63-49c5-92e0-59f46a440886",
-                "exec": [
-                  "pm.test(\"Status code is 400 Bad request not sending name\", () => {",
-                  "  pm.response.to.have.status(400);",
-                  "});",
-                  "",
-                  "",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "id": "968a2b7a-b087-4c99-b7e3-c555c007c44d",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
