@@ -283,14 +283,50 @@
             },
             {
               "name": "reopenTask",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a53675eb-5bdf-460c-9aea-c8cdbae3bfa6",
+                    "exec": [
+                      "pm.test(\"Status code is 204 update project\", () => {",
+                      "  pm.response.to.have.status(204);",
+                      "});",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "e36a1c29-c14a-4671-ba40-f3dbbe11e8ff",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "POST",
                 "header": [],
-                "url": null
+                "url": {
+                  "raw": "https://api.todoist.com/rest/v1/tasks/:id/reopen",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "todoist",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "v1",
+                    "tasks",
+                    ":id",
+                    "reopen"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{task_id}}"
+                    }
+                  ]
+                }
               },
               "response": []
             }
