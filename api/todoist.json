@@ -153,6 +153,19 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "updateProject Negative Copy",
+              "id": "b3fc52be-2843-4c2c-8268-ee94d16d4c2f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+              },
+              "response": []
             }
           ],
           "id": "465f7e0c-de75-4ac3-bbba-980064518eba",
@@ -470,19 +483,6 @@
             {
               "name": "updateProject Negative",
               "id": "54ba0d6e-465d-4e2e-97d6-3046aad7b0d0",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": null
-              },
-              "response": []
-            },
-            {
-              "name": "updateProject Negative Copy",
-              "id": "b3fc52be-2843-4c2c-8268-ee94d16d4c2f",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
