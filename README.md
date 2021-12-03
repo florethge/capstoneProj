@@ -21,6 +21,7 @@ PASSWORD = a_valid_password
 npm install
 ```
 ### Project Structure
+```
 |-- README.md
 |-- package-lock.json
 |-- package.json
@@ -42,11 +43,12 @@ npm install
 |       |-- login.test.js
 |       `-- newProject.test.js
 `-- report.html
+```
 
 ### Project Stack
-Node
-Testcafe
-JavaScript
+- Node
+- Testcafe
+- JavaScript
 
 ### Dependencies
 - dotenv
