@@ -555,35 +555,28 @@
             },
             {
               "name": "deleteTask Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "af86298d-d054-49ae-8e02-448bd84e507a",
+                    "exec": [
+                      "pm.test(\"Status code is 405 no task id is given on delete task\", () => {",
+                      "  pm.response.to.have.status(405);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "id": "7e244488-eb15-4b99-a496-b7b0757abb67",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
               "request": {
-                "method": "GET",
+                "method": "DELETE",
                 "header": [],
-                "url": {
-                  "raw": "https://api.todoist.com/rest/v1/tasks/:id",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "todoist",
-                    "com"
-                  ],
-                  "path": [
-                    "rest",
-                    "v1",
-                    "tasks",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "id": "f8c3c5e3-4773-4b83-b836-29f972d3e2de",
-                      "key": "id",
-                      "value": "{{task_id}}"
-                    }
-                  ]
-                }
+                "url": "https://api.todoist.com/rest/v1/tasks/"
               },
               "response": []
             }
