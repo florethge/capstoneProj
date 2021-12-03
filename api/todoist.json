@@ -44,7 +44,7 @@
               "response": []
             },
             {
-              "name": "createNewTas",
+              "name": "createNewTask",
               "event": [
                 {
                   "listen": "test",
