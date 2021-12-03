@@ -112,10 +112,28 @@
                   "script": {
                     "id": "1dbbb575-d6d0-4e50-8362-d34b683bfaf8",
                     "exec": [
-                      "pm.test(\"Status code is 400 Bad request task id is invalid\", () => {",
-                      "  pm.response.to.have.status(400);",
+                      "pm.test(\"Status code is 200 sending name\", () => {",
+                      "  pm.response.to.have.status(200);",
                       "});",
-                      ""
+                      "",
+                      "pm.test(\"Content-Type header is application/json\", () => {",
+                      "  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+                      "});",
+                      "",
+                      "const schema = {",
+                      "  \"type\": \"object\",",
+                      "  \"properties\": {",
+                      "    \"id\": {",
+                      "      \"type\": \"number\"",
+                      "    },",
+                      "    \"content\": {",
+                      "      \"type\": \"string\"",
+                      "    }",
+                      "  }",
+                      "};",
+                      "pm.test('Schema is valid for id and content', function() {",
+                      "  pm.response.to.have.jsonSchema(schema);",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -128,6 +146,10 @@
               "request": {
                 "method": "GET",
                 "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
                 "url": {
                   "raw": "https://api.todoist.com/rest/v1/tasks/:id",
                   "protocol": "https",
@@ -144,9 +166,8 @@
                   ],
                   "variable": [
                     {
-                      "id": "3b028e08-6845-489f-a08e-85d470bad303",
                       "key": "id",
-                      "value": null
+                      "value": "{{task_id}}"
                     }
                   ]
                 }
