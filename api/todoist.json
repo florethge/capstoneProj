@@ -158,7 +158,7 @@
               "response": []
             },
             {
-              "name": "createNewTask Copy",
+              "name": "createNewTask",
               "event": [
                 {
                   "listen": "test",
