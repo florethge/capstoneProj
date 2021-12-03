@@ -77,7 +77,7 @@
               "request": {
                 "method": "GET",
                 "header": [],
-                "url": null
+                "url": "https://api.todoist.com/rest/v1/tasks"
               },
               "response": []
             }
