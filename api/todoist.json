@@ -83,7 +83,7 @@
               "response": []
             },
             {
-              "name": "getAllProjects Negative",
+              "name": "getAllProjects",
               "event": [
                 {
                   "listen": "test",
