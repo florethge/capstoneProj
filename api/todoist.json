@@ -1267,7 +1267,27 @@
                       "pm.test(\"Status code is 200\", () => {",
                       "  pm.response.to.have.status(200);",
                       "});",
-                      ""
+                      "",
+                      "const schema = {",
+                      "  \"type\": \"array\",",
+                      "  \"contains\": {",
+                      "      \"type\": \"object\",",
+                      "      \"properties\": {",
+                      "        \"id\": {",
+                      "        \"type\": \"number\"",
+                      "        },",
+                      "        \"name\": {",
+                      "        \"type\": \"string\"",
+                      "        },",
+                      "        \"color\": {",
+                      "        \"type\": \"number\"",
+                      "        }",
+                      "      }",
+                      "  }",
+                      "};",
+                      "pm.test('Schema is valid for id and content', function() {",
+                      "  pm.response.to.have.jsonSchema(schema);",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
