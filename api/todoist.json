@@ -185,7 +185,10 @@
                       "pm.test(\"Status code is 204 update project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      ""
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
