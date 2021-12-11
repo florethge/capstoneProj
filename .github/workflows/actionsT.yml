@@ -38,8 +38,8 @@ jobs:
       - name: installing html reporter 
         run: npm install -g newman-reporter-htmlextra
 
-      - name: running eslint
-        run: eslint . --ext .js
+      # - name: running eslint
+      #   run: eslint . --ext .js
  
       - name: Make directory to upload the test results
         run: mkdir -p testResults
