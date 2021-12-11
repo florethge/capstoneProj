@@ -6,6 +6,8 @@ on:
     branches: [ master ]
 
 jobs:
+  env:
+    ESLINT_NO_DEV_ERRORS: true
   build:
     runs-on: windows-latest
     steps:
@@ -31,7 +33,7 @@ jobs:
         run: mkdir -p testResults
 
       - name: running html reporter for newman
-        run: newman run api/todoist.json -e api/capstoneEnviroment.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+        run: newman run api/todoist.json --env-var token=${{secrets.TOKEN}} -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
 
       - name: upload html reporter outputs
         uses: actions/upload-artifact@v2
