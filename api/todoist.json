@@ -1475,6 +1475,7 @@
                       "});",
                       "",
                       "pm.environment.unset(\"project_id\");",
+                      "",
                       ""
                     ],
                     "type": "text/javascript"
