@@ -18,7 +18,7 @@
     "eslint": "npx eslint . --ext .js",
     "api-newman-tests": "npx newman run api/todoist.json -e api/capstoneEnviroment.postman_environment.json ",
     "test-all-chrome-headless-report": "testcafe chrome:headless pom/tests -r xunit:res.xml",
-    "test-smoke-chrome-headless-report": "testcafe chrome pom/tests --test-meta type=smoke -r xunit:res.xml"
+    "test-smoke-chrome-headless-report": "testcafe chrome:headless pom/tests --test-meta type=smoke -r xunit:res.xml"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",

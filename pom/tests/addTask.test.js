@@ -52,7 +52,6 @@ test
             }
         }
         await t.expect(count).eql(1)
-        await t.expect(inbox.tomorrowTag.exists).ok()
 
 });
 
@@ -65,7 +64,7 @@ test
             await addTasks.addMultipleTaskFlow(randomStrings[index] , "es un test")
         }
         await t.wait(7000)
-        await today.openMenuToToday()
+        await date.openMenuToToday()
         let tasks = await inbox.addedTaskTitle.count
         //console.log(randomStrings)
         let count = 0
