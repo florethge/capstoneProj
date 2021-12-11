@@ -185,7 +185,10 @@
                       "pm.test(\"Status code is 204 update project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      ""
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -243,7 +246,10 @@
                       "pm.test(\"Status code is 204 update project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      ""
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -292,7 +298,10 @@
                       "pm.test(\"Status code is 204 update project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      ""
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -1267,7 +1276,27 @@
                       "pm.test(\"Status code is 200\", () => {",
                       "  pm.response.to.have.status(200);",
                       "});",
-                      ""
+                      "",
+                      "const schema = {",
+                      "  \"type\": \"array\",",
+                      "  \"contains\": {",
+                      "      \"type\": \"object\",",
+                      "      \"properties\": {",
+                      "        \"id\": {",
+                      "        \"type\": \"number\"",
+                      "        },",
+                      "        \"name\": {",
+                      "        \"type\": \"string\"",
+                      "        },",
+                      "        \"color\": {",
+                      "        \"type\": \"number\"",
+                      "        }",
+                      "      }",
+                      "  }",
+                      "};",
+                      "pm.test('Schema is valid for id and content', function() {",
+                      "  pm.response.to.have.jsonSchema(schema);",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -1379,7 +1408,10 @@
                       "pm.test(\"Status code is 204 update project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      ""
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
@@ -1437,7 +1469,13 @@
                       "pm.test(\"Status code is 204 delete a project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      "pm.environment.unset(\"project_id\");"
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});",
+                      "",
+                      "pm.environment.unset(\"project_id\");",
+                      ""
                     ],
                     "type": "text/javascript"
                   }
