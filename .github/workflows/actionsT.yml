@@ -6,8 +6,6 @@ on:
     branches: [ master ]
 
 jobs:
-  env:
-    ESLINT_NO_DEV_ERRORS: true
   build:
     runs-on: windows-latest
     steps:
@@ -28,6 +26,8 @@ jobs:
 
       - name: running eslint
         run: eslint . --ext .js
+        env:
+         ESLINT_NO_DEV_ERRORS: true
 
       - name: Make directory to upload the test results
         run: mkdir -p testResults
