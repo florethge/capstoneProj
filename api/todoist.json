@@ -1469,7 +1469,13 @@
                       "pm.test(\"Status code is 204 delete a project\", () => {",
                       "  pm.response.to.have.status(204);",
                       "});",
-                      "pm.environment.unset(\"project_id\");"
+                      "",
+                      "pm.test(\"response of Body is null\", function () {",
+                      "    pm.response.to.have.body(\"\");",
+                      "});",
+                      "",
+                      "pm.environment.unset(\"project_id\");",
+                      ""
                     ],
                     "type": "text/javascript"
                   }
