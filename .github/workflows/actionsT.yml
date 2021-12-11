@@ -24,6 +24,17 @@ jobs:
       - name: installing eslint 
         run: npm install -g eslint-plugin-only-warn
 
+      - name: installing eslint 
+        run: npm install -g eslint-config-google
+
+      - name: installing eslint 
+        run: npm install -g @typescript-eslint/eslint-plugin
+
+      - name: installing eslint 
+        run: npm install -g @typescript-eslint/parser
+
+
+
       - name: installing html reporter 
         run: npm install -g newman-reporter-htmlextra
 
